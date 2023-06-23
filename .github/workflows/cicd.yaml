@@ -42,5 +42,4 @@ jobs:
     uses: ./.github/workflows/deploy.yaml
     with:
       version: ${{ needs.build.outputs.short_sha }}
-      environment_ref: dev
     secrets: inherit
