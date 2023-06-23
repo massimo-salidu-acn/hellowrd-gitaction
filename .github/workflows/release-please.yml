@@ -72,6 +72,6 @@ jobs:
     needs: publish2 
     steps:
       - env:
-          OUTPUT3: ${{needs.publish2.outputs }}
+          OUTPUT3: ${{needs.publish2.outputs.testvar }}
         run: |
           echo "-- $OUTPUT3 ---"
