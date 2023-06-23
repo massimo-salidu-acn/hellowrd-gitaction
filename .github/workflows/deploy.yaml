@@ -1,0 +1,30 @@
+name: Deployment
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        type: string
+        description: 'Docker image version/tag to use'
+        required: true
+  workflow_call:
+    inputs:
+      version:
+        required: true
+        type: string
+        description: 'Docker image version/tag to use'
+env:
+  IMAGE: 'europe-west4-docker.pkg.dev/mms-mwi-oms-integration-d-v001/doms-integration-dev/doms-masterdata-integration'
+  
+jobs:
+  deployment:
+    name: 'Deployment'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set environment variables
+        run: |
+          echo "Version to deploy: ${{ inputs.version }}"
+      - name: Checkout Code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          ref: main

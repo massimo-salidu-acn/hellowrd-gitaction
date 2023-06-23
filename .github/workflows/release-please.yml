@@ -1,0 +1,29 @@
+on:
+  push:
+    branches:
+      - main
+name: release-please
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: google-github-actions/release-please-action@v3
+        with:
+          release-type: simple
+          package-name: doms-masterdata-integration
+          changelog-types: >-
+            [
+              {"type":"feat","section":"Features","hidden":false},
+              {"type":"fix","section":"Bug Fixes","hidden":false},
+              {"type":"docs","section":"Other","hidden":false},
+              {"type":"refactor","section":"Other","hidden":false},
+              {"type":"ci","section":"Other","hidden":false},
+              {"type":"test","section":"Other","hidden":false},
+              {"type":"chore","section":"Other","hidden":true},
+              {"type":"build","section":"Other","hidden":true}
+            ]
+      # - name: Pull in updated files
+      #   uses: actions/checkout@v3
+      #   if: ${{ steps.release-please.outputs.release_created }}
+      #   with:
+      #     ref: 'main'

@@ -1,0 +1,46 @@
+name: CICD
+
+on:
+  push:
+  #  paths-ignore:
+  #    - '.github/workflows/*'
+  #    - 'config/*'
+  #    - '*.md'
+    branches:
+      - main
+  release:
+    types:
+      - published
+  pull_request:
+    types: [opened, synchronize]
+
+env:
+  IMAGE: 'europe-west4-docker.pkg.dev/mms-mwi-oms-integration-d-v001/doms-integration-dev/doms-masterdata-integration'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Test and build
+    runs-on: ubuntu-latest
+    outputs:
+      short_sha: ${{ env.SHORT_SHA }}
+    steps:
+      - name: Resolve variables
+        run: |
+          echo "SHORT_SHA=${GITHUB_SHA::7}" >> $GITHUB_ENV
+          echo "TAG_IMAGE=${{github.event_name == 'release' &&  github.ref_type == 'tag'}}" >> $GITHUB_ENV
+
+      - uses: actions/checkout@v3
+
+  deploy_dev:
+    name: Deploy to DEV
+    if: needs.build.outputs.deployment == 'true'
+    needs: [ 'build' ]
+    uses: ./.github/workflows/deploy.yaml
+    with:
+      version: ${{ needs.build.outputs.short_sha }}
+      environment_ref: dev
+    secrets: inherit
