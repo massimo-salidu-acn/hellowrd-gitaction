@@ -31,9 +31,18 @@ jobs:
             ]
 
   publish:
-    name: Deploy artefact to npm registry
-    if:  ${{ needs.release-please.outputs.release_created }}
+    runs-on: ubuntu-latest
     needs: [ 'release-please' ]
-    uses: ./.github/workflows/deploy.yaml
-    with:
-      version: 2
+    #outputs:
+      #testvar: ${{ steps.deploy1.outputs.testvar }}
+    steps:
+      - uses: ./.github/workflows/deploy.yaml
+        id: deploy1
+        name: Deploy artefact to npm registry
+        with:
+          version: 2
+      - uses: ./.github/workflows/deploy.yaml
+        id: deploy2
+        name: Deploy artefact to npm registry
+        with:
+          version: ${{ steps.deploy1.outputs.testvar }}

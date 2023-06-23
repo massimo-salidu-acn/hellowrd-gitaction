@@ -19,6 +19,8 @@ jobs:
   deployment:
     name: 'Deployment'
     runs-on: ubuntu-latest
+    outputs:
+      testvar: 'variabile-test'
     steps:
       - name: Set environment variables
         run: |
