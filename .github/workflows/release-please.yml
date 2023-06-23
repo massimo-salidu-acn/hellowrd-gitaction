@@ -29,7 +29,12 @@ jobs:
               {"type":"chore","section":"Other","hidden":true},
               {"type":"build","section":"Other","hidden":true}
             ]
-      - run: echo "Release ${{ steps.release.outputs['release_created'] }} created for package-a."
+      - run: |
+          echo "Release ${{ steps.release.outputs['release_created'] }} created"
+          echo "Release ${{ steps.release.outputs.release_created }} create
+          echo "Release ${{ env.release_created }} create
+          echo "env"
+
 
   #    - name: Deploy
   #      if: ${{ steps.release-please.outputs.release_created }}
