@@ -2,12 +2,17 @@ on:
   push:
     branches:
       - main
+permissions:
+  contents: write
+  pull-requests: write
+
 name: release-please
 jobs:
   release-please:
     runs-on: ubuntu-latest
     steps:
       - uses: google-github-actions/release-please-action@v3
+        id: release-please
         with:
           release-type: node
           package-name: hellowrd-gitaction
@@ -22,11 +27,12 @@ jobs:
               {"type":"chore","section":"Other","hidden":true},
               {"type":"build","section":"Other","hidden":true}
             ]
-      # - name: Pull in updated files
-      #   uses: actions/checkout@v3
-      #   if: ${{ steps.release-please.outputs.release_created }}
-      #   with:
-      #     ref: 'main'
+      - name: Deploy
+        if: ${{ steps.release-please.outputs.release_created }}
+        uses: ./.github/workflows/deploy.yaml
+        with:
+          version: 2
+
   publish:
     name: Deploy artefact to npm registry
     if: ${{ needs.release-please.release.outputs.release_created }}
