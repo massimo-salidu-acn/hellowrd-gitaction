@@ -30,10 +30,10 @@ jobs:
               {"type":"build","section":"Other","hidden":true}
             ]
       - run: |
-          echo "Release ${{ steps.release.outputs['release_created'] }} created"
+          echo "Release ${{ steps.release.outputs['release_created'] }} create"
           echo "Release ${{ steps.release.outputs.release_created }} create
           echo "Release ${{ env.release_created }} create
-          echo "env"
+          echo "$(env)"
 
 
   #    - name: Deploy
