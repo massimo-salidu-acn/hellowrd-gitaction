@@ -27,11 +27,11 @@ jobs:
               {"type":"chore","section":"Other","hidden":true},
               {"type":"build","section":"Other","hidden":true}
             ]
-      - name: Deploy
-        if: ${{ steps.release-please.outputs.release_created }}
-        uses: ./.github/workflows/deploy.yaml
-        with:
-          version: 2
+  #    - name: Deploy
+  #      if: ${{ steps.release-please.outputs.release_created }}
+  #      uses: ./.github/workflows/deploy.yaml
+  #      with:
+  #        version: 2
 
   publish:
     name: Deploy artefact to npm registry
