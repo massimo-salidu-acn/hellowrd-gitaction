@@ -39,17 +39,11 @@ jobs:
       version: 2
 
   publish2:
-    name: Deploy artefact to npm registry
-    runs-on: ubuntu-latest
+    name: Deploy2
     needs: [ 'release-please' ]
-    outputs:
-      testvar: ${{ steps.deploy.outputs.testvar }}
-    steps:
-      - name: Deploy
-        id: deploy
-        uses: ./.github/workflows/deploy.yaml
-        with:
-          version: 2
+    uses: ./.github/workflows/deploy.yaml
+    with:
+      version: 2
 
   job1:
     runs-on: ubuntu-latest
@@ -78,6 +72,6 @@ jobs:
     needs: publish2 
     steps:
       - env:
-          OUTPUT3: ${{needs.publish2.outputs.testvar}}
+          OUTPUT3: ${{needs.publish2.outputs }}
         run: |
           echo "-- $OUTPUT3 ---"
