@@ -38,6 +38,14 @@ jobs:
     with:
       version: 2
 
+  publish2:
+    name: Deploy artefact to npm registry
+    uses: ./.github/workflows/deploy.yaml
+    if:  ${{ needs.release-please.outputs.release_created }}
+    needs: [ 'release-please' ]
+    with:
+      version: 2
+
   job1:
     runs-on: ubuntu-latest
     # Map a step output to a job output
@@ -62,9 +70,9 @@ jobs:
 
   job3:
     runs-on: ubuntu-latest
-    needs: publish 
+    needs: publish2 
     steps:
       - env:
-          OUTPUT3: ${{needs.publish.outputs.testvar}}
+          OUTPUT3: ${{needs.publish2.outputs.testvar}}
         run: |
           echo "-- $OUTPUT3 ---"
