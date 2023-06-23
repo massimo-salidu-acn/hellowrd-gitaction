@@ -31,5 +31,9 @@ jobs:
     name: Deploy artefact to npm registry
     needs: [ 'release-please' ]
     uses: ./.github/workflows/deploy.yaml
+    with:
+      version: 2
 
 # if: ${{ needs.release-please.release.outputs.release_created }}
+#with:
+#  version: ${{ needs.build.outputs.short_sha }}
