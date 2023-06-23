@@ -5,11 +5,11 @@ on:
       version:
         type: string
         description: 'Docker image version/tag to use'
-        required: true
+        #required: true
   workflow_call:
     inputs:
       version:
-        required: true
+        #required: true
         type: string
         description: 'Docker image version/tag to use'
 env:
@@ -22,7 +22,7 @@ jobs:
     steps:
       - name: Set environment variables
         run: |
-          echo "Version to deploy: ${{ inputs.version }}"
+          echo "Version to deploy: ${{ inputs.version || 'xxx'}}"
       - name: Checkout Code
         uses: actions/checkout@v3
         with:

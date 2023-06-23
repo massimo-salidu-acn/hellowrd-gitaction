@@ -29,18 +29,6 @@ jobs:
               {"type":"chore","section":"Other","hidden":true},
               {"type":"build","section":"Other","hidden":true}
             ]
-      - run: |
-          echo "Release ${{ steps.release.outputs['release_created'] }} create"
-          echo "Release ${{ steps.release.outputs.release_created }} create
-          echo "Release ${{ env.release_created }} create
-          echo "$(env)"
-
-
-  #    - name: Deploy
-  #      if: ${{ steps.release-please.outputs.release_created }}
-  #      uses: ./.github/workflows/deploy.yaml
-  #      with:
-  #        version: 2
 
   publish:
     name: Deploy artefact to npm registry
@@ -49,21 +37,3 @@ jobs:
     uses: ./.github/workflows/deploy.yaml
     with:
       version: 2
-
-  echovars:
-    name: 'echovars'
-    runs-on: ubuntu-latest
-    steps:
-      - name: Set environment variables
-        run: |
-          echo "Version to deploy: ${{ needs.release-please.outputs.release_created }}"
-      - name: Checkout Code
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-          ref: main
-
-
-# if: ${{ needs.release-please.release.outputs.release_created }}
-#with:
-#  version: ${{ needs.build.outputs.short_sha }}
