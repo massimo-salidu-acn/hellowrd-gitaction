@@ -30,6 +30,7 @@ jobs:
       - name: Set environment variables
         run: |
           echo "Version to deploy: ${{ inputs.version || 'xxx'}}"
+          echo "Git ref: ${{ github.head_ref }}"
       - name: Checkout Code
         uses: actions/checkout@v3
         with:
