@@ -37,7 +37,7 @@ jobs:
 
   deploy_dev:
     name: Deploy to DEV
-    if: needs.build.outputs.deployment == 'true'
+    #if: needs.build.outputs.deployment == 'true'
     needs: [ 'build' ]
     uses: ./.github/workflows/deploy.yaml
     with:
