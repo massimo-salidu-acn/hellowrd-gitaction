@@ -1,6 +1,16 @@
 name: Deployment
 on:
   workflow_dispatch:
+    inputs:
+      environment_ref:
+        required: false
+        default: 'int'
+        type: choice
+        description: Deployment Environment
+        options:
+          - int
+          - qa
+          - prod
 #    inputs:
 #      version:
 #        type: string
