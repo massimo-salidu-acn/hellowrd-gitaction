@@ -1,4 +1,5 @@
 name: Deployment
+
 on:
   workflow_dispatch:
     inputs:
@@ -29,6 +30,7 @@ on:
 
 env:
   IMAGE: 'europe-west4-docker.pkg.dev/mms-mwi-oms-integration-d-v001/doms-integration-dev/doms-masterdata-integration'
+  mygit_ref: ${GITHUB_REF##*/}
   
 jobs:
   deployment:
@@ -43,9 +45,10 @@ jobs:
           echo "...1 Git ref: ${{ github.head_ref }}"
           echo "...2 Git ref: ${{ github.ref }}"
           echo "...3 Git ref: ${GITHUB_REF##*/}"
+          echo "...3.1 Git ref: ${GITHUB_REF##*/}"
           echo "...4 Short sha: ${GITHUB_SHA::7}"
           echo "...5 Input Version or Git ref: ${{ inputs.version || github.ref }}"
-          echo "...6 Input Version or Git ref: ${{ inputs.version || GITHUB_BASE_REF }}"
+          echo "...6 Input Version or Git ref: ${{ inputs.version || mygit_ref }}"
 
       - name: Checkout Code
         uses: actions/checkout@v3
