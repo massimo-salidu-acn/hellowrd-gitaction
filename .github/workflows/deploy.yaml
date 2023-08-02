@@ -4,14 +4,14 @@ on:
     inputs:
       version:
         type: string
-        description: 'Docker image version/tag to use'
+        description: 'Dispatch: Docker image version/tag to use'
         #required: true
   workflow_call:
     inputs:
       version:
         #required: true
         type: string
-        description: 'Docker image version/tag to use'
+        description: 'Call: Docker image version/tag to use'
     outputs:
       testvar:
         description: "The first output string"
