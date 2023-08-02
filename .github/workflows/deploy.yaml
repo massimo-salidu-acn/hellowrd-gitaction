@@ -1,11 +1,11 @@
 name: Deployment
 on:
-  workflow_dispatch:
-    inputs:
-      version:
-        type: string
-        description: 'Dispatch: Docker image version/tag to use'
-        #required: true
+#  workflow_dispatch:
+#    inputs:
+#      version:
+#        type: string
+#        description: 'Dispatch: Docker image version/tag to use'
+#        #required: true
   workflow_call:
     inputs:
       version:
