@@ -32,7 +32,8 @@ jobs:
           echo "...Version to deploy: ${{ inputs.version || 'xxx'}}"
           echo "...1 Git ref: ${{ github.head_ref }}"
           echo "...2 Git ref: ${{ github.ref }}"
-          echo "...3 Input Version or Git ref: ${{ inputs.version || github.ref }}"
+          echo "...3 Short sha: ${GITHUB_SHA::7}"
+          echo "...4 Input Version or Git ref: ${{ inputs.version || github.ref }}"
       - name: Checkout Code
         uses: actions/checkout@v3
         with:
