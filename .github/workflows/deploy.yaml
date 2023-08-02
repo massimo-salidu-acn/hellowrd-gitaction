@@ -48,7 +48,7 @@ jobs:
           echo "...3.1 Git ref: ${GITHUB_REF##*/}"
           echo "...4 Short sha: ${GITHUB_SHA::7}"
           echo "...5 Input Version or Git ref: ${{ inputs.version || github.ref }}"
-          echo "...6 Input Version or Git ref: ${{ inputs.version || mygit_ref }}"
+          echo "...6 Input Version or Git ref: ${{ inputs.version ||  github.base_ref }}"
 
       - name: Checkout Code
         uses: actions/checkout@v3
