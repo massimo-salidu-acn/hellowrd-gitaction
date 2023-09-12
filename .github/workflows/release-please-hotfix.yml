@@ -15,10 +15,11 @@ jobs:
     steps:
       - uses: google-github-actions/release-please-action@v3
         id: release-please
+        if: startsWith(github.event.ref, 'hotfix/v')
         with:
           release-type: node
           package-name: hellowrd-gitaction
-          default-branch: hotfix/
+          default-branch: "${{ github.ref_name }}"
           changelog-types: >-
             [
               {"type":"feat","section":"Features","hidden":false},
@@ -30,4 +31,4 @@ jobs:
               {"type":"chore","section":"Other","hidden":true},
               {"type":"build","section":"Other","hidden":true}
             ]
-
+        
