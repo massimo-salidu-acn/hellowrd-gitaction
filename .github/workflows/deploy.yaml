@@ -57,10 +57,10 @@ jobs:
           fetch-depth: 0
           ref: main
       
-      - name: Create hofix branch
+      - name: Create hotfix branch
         uses: peterjgrainger/action-create-branch@v2.2.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          branch: "hofix/${{ github.ref_name }}"
+          branch: "hotfix/${{ github.ref_name }}"
         if: startsWith(github.event.ref, 'refs/tags/v')
