@@ -43,3 +43,11 @@ jobs:
               {"type":"build","section":"Other","hidden":true}
             ]
         
+      - name: Merge hotfix -> main
+        uses: devmasx/merge-branch@master
+        if: ${{ steps.release-please.outputs.release_created  }}
+        with:
+          type: now
+          from_branch: "${{ github.ref_name }}"
+          target_branch: main
+          github_token: ${{ secrets.GITHUB_TOKEN }}
