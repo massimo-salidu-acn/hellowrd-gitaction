@@ -1,5 +1,20 @@
 # Changelog
 
+## [2.0.14](https://github.com/massimo-salidu-acn/hellowrd-gitaction/compare/v2.0.13...v2.0.14) (2023-09-12)
+
+
+### Bug Fixes
+
+* ad new branch release please ([c1501f6](https://github.com/massimo-salidu-acn/hellowrd-gitaction/commit/c1501f6b33681bc6fbfdce2c67c69f1b2d610a47))
+* test ([f67f091](https://github.com/massimo-salidu-acn/hellowrd-gitaction/commit/f67f091a7b2a7c3f507976d54d19cc38901cd50d))
+* test 3 ([ab819cc](https://github.com/massimo-salidu-acn/hellowrd-gitaction/commit/ab819cc7f21e1965f6332ba13f5f6b5dbce10298))
+* test barnch ([dde21a6](https://github.com/massimo-salidu-acn/hellowrd-gitaction/commit/dde21a6b2b464ef84b1acb94a6ff6b2bdfea6e0a))
+* test da branch hotfix ([8c56f97](https://github.com/massimo-salidu-acn/hellowrd-gitaction/commit/8c56f974b10ba010a8d3f2654e7de4da64342614))
+* test merge ([4a762fb](https://github.com/massimo-salidu-acn/hellowrd-gitaction/commit/4a762fb1fd15051a494903fdafc776ceb53c3024))
+* test2 ([a49fd10](https://github.com/massimo-salidu-acn/hellowrd-gitaction/commit/a49fd10039256bb058e2bed5e3dd6e75ff31f5e3))
+* test3 ([11a28ef](https://github.com/massimo-salidu-acn/hellowrd-gitaction/commit/11a28efb9767b8e68c4c4e46caf76484be20702a))
+* test4 ([b19462b](https://github.com/massimo-salidu-acn/hellowrd-gitaction/commit/b19462bab9a7fb2ef4b310286154c86d8abb0f18))
+
 ## [2.0.13](https://github.com/massimo-salidu-acn/hellowrd-gitaction/compare/v2.0.12...v2.0.13) (2023-09-12)
 
 
