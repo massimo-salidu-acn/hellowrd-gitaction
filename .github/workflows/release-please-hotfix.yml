@@ -13,9 +13,20 @@ jobs:
     outputs:
       release_created: ${{ steps.release-please.outputs.release_created }}
     steps:
+      - name: Set environment variables
+        run: |
+          echo "...Version to deploy: ${{ inputs.version || 'xxx'}}"
+          echo "...1 Git ref: ${{ github.head_ref }}"
+          echo "...2 Git ref: ${{ github.ref }}"
+          echo "...3 Git ref: ${GITHUB_REF##*/}"
+          echo "...3.1 Git ref: ${GITHUB_REF##*/}"
+          echo "...3.2 Git ref name: ${{ github.ref_name }}"
+          echo "...4 Short sha: ${GITHUB_SHA::7}"
+          echo "...5 Input Version or Git ref: ${{ inputs.version || github.ref }}"
+          echo "...6 Input Version or Git ref: ${{ inputs.version || github.ref_name }}"
+
       - uses: google-github-actions/release-please-action@v3
         id: release-please
-        if: startsWith(github.event.ref, 'hotfix/v')
         with:
           release-type: node
           package-name: hellowrd-gitaction
