@@ -31,7 +31,7 @@ jobs:
           release-type: node
           package-name: hellowrd-gitaction
           default-branch: "${{ github.ref_name }}"
-          labels: Testlabel1, TestLabel2
+          labels: Testlabel1
           release-labels: TagLabel
           monorepo-tags: false
           changelog-types: >-
