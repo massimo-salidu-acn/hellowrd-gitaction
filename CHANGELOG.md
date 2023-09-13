@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.17](https://github.com/massimo-salidu-acn/hellowrd-gitaction/compare/v2.0.16...v2.0.17) (2023-09-13)
+
+
+### Bug Fixes
+
+* test labal ([727dc28](https://github.com/massimo-salidu-acn/hellowrd-gitaction/commit/727dc284380626c5bb8e42db84a6858c287731a6))
+
 ## [2.0.16](https://github.com/massimo-salidu-acn/hellowrd-gitaction/compare/v2.0.15...v2.0.16) (2023-09-13)
 
 
