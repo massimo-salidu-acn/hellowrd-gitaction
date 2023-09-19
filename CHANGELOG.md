@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.19](https://github.com/massimo-salidu-acn/hellowrd-gitaction/compare/v2.0.18...v2.0.19) (2023-09-19)
+
+
+### Bug Fixes
+
+* test2 ([8775796](https://github.com/massimo-salidu-acn/hellowrd-gitaction/commit/87757962ba54543a02da839236ef564870379c36))
+
 ## [2.0.18](https://github.com/massimo-salidu-acn/hellowrd-gitaction/compare/v2.0.17...v2.0.18) (2023-09-19)
 
 
