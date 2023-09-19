@@ -51,7 +51,7 @@ jobs:
           echo "...5 Input Version or Git ref: ${{ inputs.version || github.ref }}"
           echo "...6 Input Version or Git ref: ${{ inputs.version || github.ref_name }}"
           REF="${{ github.ref_name }}"
-          REF_NAME="${REF//-/_}"
+          REF_NAME="${REF//\./_}"
           echo "VERSION=${REF_NAME}" >> $GITHUB_ENV
           echo "Version to deploy: ${REF_NAME}"
 
