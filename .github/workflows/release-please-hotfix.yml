@@ -24,11 +24,6 @@ jobs:
           echo "...4 Short sha: ${GITHUB_SHA::7}"
           echo "...5 Input Version or Git ref: ${{ inputs.version || github.ref }}"
           echo "...6 Input Version or Git ref: ${{ inputs.version || github.ref_name }}"
-      - name: character-replacement-test
-        run: |
-          REPO=${{ github.ref_name }}"
-          DB_NAME="${REPO//-/_}"
-          echo $DB_NAME
 
       - uses: google-github-actions/release-please-action@v3
         id: release-please
