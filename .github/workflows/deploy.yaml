@@ -58,10 +58,12 @@ jobs:
           echo "...6 Input Version or Git ref: ${{ inputs.version || github.ref_name }}"
           REF="${{ github.ref_name }}"
           REF_NAME="${REF//\./_}"
+         
+          PKG_VER=$(npm version | grep hellowrd-gitaction |  sed "s/.* '//" | sed "s/',//" | sed "s/'\./_/")
+          echo "PKG_VER=${PKG_VER}" >> $GITHUB_ENV
+          [[ "${{ github.ref }}" == *"main"* ]] && VERSION="${REF_NAME}-${PKG_VER}" || VERSION="${REF_NAME}"
           echo "VERSION=${REF_NAME}" >> $GITHUB_ENV
           echo "Version to deploy: ${REF_NAME}"
-          PKG_VER=$(npm version | grep hellowrd-gitaction |  sed "s/.* '//" | sed "s/',//")
-          echo "PKG_VER=${PKG_VER}" >> $GITHUB_ENV
 
       - name: Set environment variables
         run: |
