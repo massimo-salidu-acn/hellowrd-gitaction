@@ -39,6 +39,12 @@ jobs:
     outputs:
       testvar: 'variabile-test'
     steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          ref: main
+
       - name: Set environment variables
         run: |
           echo "...Version to deploy: ${{ inputs.version || 'xxx'}}"
@@ -54,22 +60,21 @@ jobs:
           REF_NAME="${REF//\./_}"
           echo "VERSION=${REF_NAME}" >> $GITHUB_ENV
           echo "Version to deploy: ${REF_NAME}"
+          PKG_VER=$(npm version | grep hellowrd-gitaction |  sed "s/.* '//" | sed "s/',//")
+          echo "PKG_VER=${PKG_VER}" >> $GITHUB_ENV
 
       - name: Set environment variables
         run: |
           echo "test env Version to deploy:${{ env.VERSION }}"
+          echo "test env package to deploy:${{ env.PKG_VER }}"
 
-      - name: Checkout Code
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-          ref: main
       
-      - name: Create hotfix branch
-        uses: peterjgrainger/action-create-branch@v2.2.0
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          branch: "hotfix/${{ github.ref_name }}"
-        if: startsWith(github.event.ref, 'refs/tags/v')
+      
+##      - name: Create hotfix branch
+##        uses: peterjgrainger/action-create-branch@v2.2.0
+##        env:
+##          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+##        with:
+##          branch: "hotfix/${{ github.ref_name }}"
+##        if: startsWith(github.event.ref, 'refs/tags/v')
         
