@@ -56,6 +56,7 @@ jobs:
           echo "...4 Short sha: ${GITHUB_SHA::7}"
           echo "...5 Input Version or Git ref: ${{ inputs.version || github.ref }}"
           echo "...6 Input Version or Git ref: ${{ inputs.version || github.ref_name }}"
+          echo "...7 Git huh sha: ${{ github.sha }}"
           REF="${{ github.ref_name }}"
           REF_NAME="${REF//\./_}"
           PKG_VER=$(npm version | grep hellowrd-gitaction |  sed "s/.* '//" | sed "s/',//" | sed "s/\./_/g")
