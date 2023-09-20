@@ -62,8 +62,8 @@ jobs:
           PKG_VER=$(npm version | grep hellowrd-gitaction |  sed "s/.* '//" | sed "s/',//" | sed "s/'\./_/")
           echo "PKG_VER=${PKG_VER}" >> $GITHUB_ENV
           [[ "${{ github.ref }}" == *"main"* ]] && VERSION="${REF_NAME}-${PKG_VER}" || VERSION="${REF_NAME}"
-          echo "VERSION=${REF_NAME}" >> $GITHUB_ENV
-          echo "Version to deploy: ${REF_NAME}"
+          echo "VERSION=${VERSION}" >> $GITHUB_ENV
+          echo "Version to deploy: ${VERSION}"
 
       - name: Set environment variables
         run: |
