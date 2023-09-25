@@ -12,6 +12,14 @@ on:
           - int
           - qa
           - prod
+      route_traffic:
+        description: "Route traffic"
+        type: choice
+        required: true
+        default: 'true'
+        options:
+          - true
+          - false
 #    inputs:
 #      version:
 #        type: string
@@ -60,9 +68,10 @@ jobs:
           REF="${{ github.ref_name }}"
           REF_NAME="${REF//\./_}"
           PKG_VER=$(npm version | grep hellowrd-gitaction |  sed "s/.* '//" | sed "s/',//" | sed "s/\./_/g")
-          [[ "${{ github.ref }}" == *"main"* ]] && VERSION="${REF_NAME}-${PKG_VER}" || VERSION="${REF_NAME}"
+          [[ "${{ github.ref }}" == *"main"* ]] && LABEL="${REF_NAME}-${PKG_VER},sha=${{ github.sha }}" || VERSION="${REF_NAME}"
           echo "VERSION=${VERSION}" >> $GITHUB_ENV
           echo "Version to deploy: ${VERSION}"
+          echo "Route traffic: ${{ inputs.version || 'true'}}""
 
       - name: Set environment variables
         run: |
