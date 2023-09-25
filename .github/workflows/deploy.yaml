@@ -71,7 +71,7 @@ jobs:
           [[ "${{ github.ref }}" == *"main"* ]] && LABEL="${REF_NAME}-${PKG_VER},sha=${{ github.sha }}" || VERSION="${REF_NAME}"
           echo "VERSION=${VERSION}" >> $GITHUB_ENV
           echo "Version to deploy: ${VERSION}"
-          echo "Route traffic: ${{ inputs.version || 'true'}}"
+          echo "Route traffic: ${{ inputs.route_traffic || 'true'}}"
 
       - name: Set environment variables
         run: |
