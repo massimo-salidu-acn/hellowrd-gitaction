@@ -1,5 +1,11 @@
 {
     "name": "hellowrd-gitaction",
     "version": "2.0.19",
-    "author": "Massimo Salidu <massimo.salidu@gmail.com>"
+    "author": "Massimo Salidu <massimo.salidu@gmail.com>",
+    "scripts": {
+        "prehello": "echo \"--Preparing greeting\"",
+        "hello": "echo \"Hello World\"",
+        "posthello": "echo \"--Greeting delivered\"",
+        "max": "echo ${NODE_MEMORY:-2048}"
+    }
 }

@@ -1,0 +1,58 @@
+name: Deployment
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment_ref:
+        required: false
+        default: 'int'
+        type: choice
+        description: Deployment Environment
+        options:
+          - int
+          - qa
+          - prod
+      route_traffic:
+        description: "Route traffic"
+        type: choice
+        required: true
+        default: 'true'
+        options:
+          - true
+          - false
+  workflow_call:
+    inputs:
+      version:
+        #required: true
+        type: string
+        description: 'Call: Docker image version/tag to use'
+    outputs:
+      testvar:
+        description: "The first output string"
+        value: ${{ jobs.deployment.outputs.testvar }}
+
+
+  
+jobs:
+  deployment:
+    strategy:
+      matrix:
+        function_suffix: ["", "-A", "-B"]
+    name: 'Deployment'
+    runs-on: ubuntu-latest
+    outputs:
+      testvar: 'variabile-test'
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          ref: main
+
+      - name: Set environment variables
+        run: |
+          echo "...Version to deploy: ${{ inputs.version || 'xxx'}}"
+          echo "...Function Name: ${{ matrix.function_suffix }}
+
+
+
