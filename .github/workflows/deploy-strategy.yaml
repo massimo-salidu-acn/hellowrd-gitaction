@@ -32,13 +32,13 @@ on:
         value: ${{ jobs.deployment.outputs.testvar }}
 
 env:
-  FUNCTION_NAMES: '"-A","-B","-C"'
+  FUNCTION_NAMES: '"-A","-B","-C", "NON FUNZIONA"'
   
 jobs:
   deployment:
     strategy:
       matrix:
-        function_suffix: ${{ fromJSON(env.FUNCTION_NAMES)  }}
+        function_suffix: ["","-B","C"]
     name: 'Deployment'
     runs-on: ubuntu-latest
     outputs:
