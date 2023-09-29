@@ -38,7 +38,7 @@ jobs:
   deployment:
     strategy:
       matrix:
-        function_suffix: ${{ fromJSON(vars.FUNCTION_NAMES)  }}
+        function_suffix: ${{ fromJSON(env.FUNCTION_NAMES)  }}
     name: 'Deployment'
     runs-on: ubuntu-latest
     outputs:
