@@ -52,7 +52,7 @@ jobs:
       - name: Set environment variables
         run: |
           echo "...Version to deploy: ${{ inputs.version || 'xxx'}}"
-          echo "...Function Name: ${{ matrix.function_suffix }}
+          echo "...Function Name: ${{ matrix.function_suffix }}"
 
 
 
