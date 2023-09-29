@@ -31,13 +31,14 @@ on:
         description: "The first output string"
         value: ${{ jobs.deployment.outputs.testvar }}
 
-
+env:
+  FUNCTION_NAMES: '"-A","-B","-C"'
   
 jobs:
   deployment:
     strategy:
       matrix:
-        function_suffix: ["", "-A", "-B"]
+        function_suffix: ${{ fromJSON(vars.FUNCTION_NAMES)  }}
     name: 'Deployment'
     runs-on: ubuntu-latest
     outputs:
@@ -52,7 +53,7 @@ jobs:
       - name: Set environment variables
         run: |
           echo "...Version to deploy: ${{ inputs.version || 'xxx'}}"
-          echo "...Function Name: ${{ matrix.function_suffix }}"
+          echo "...Function Name: BASENAME${{ matrix.function_suffix }}"
 
 
 
