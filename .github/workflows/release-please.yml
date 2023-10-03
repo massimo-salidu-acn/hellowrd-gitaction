@@ -47,10 +47,11 @@ jobs:
 
   merge:
     runs-on: ubuntu-latest
+    if: ${{ needs.release-please.outputs.release_created }}
+    needs: [ 'release-please' ]
     steps:
       - name: Merge main -> develop
         uses: devmasx/merge-branch@master
-        if: ${{ needs.release-please.outputs.release_created }}
         with:
           type: now
           from_branch: main
