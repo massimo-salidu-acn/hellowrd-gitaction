@@ -45,6 +45,16 @@ jobs:
     with:
       version: 2
 
+  merge-develop:
+    name: Merge main -> develop
+    uses: devmasx/merge-branch@master
+    if: ${{ needs.release-please.outputs.release_created }}
+    with:
+      type: now
+      from_branch: main
+      target_branch: develop
+      github_token: ${{ secrets.GITHUB_TOKEN }}
+  
   job1:
     runs-on: ubuntu-latest
     # Map a step output to a job output
