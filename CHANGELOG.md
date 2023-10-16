@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.54](https://github.com/massimo-salidu-acn/hellowrd-gitaction/compare/v2.0.52...v2.0.54) (2023-10-16)
+
+
+### Bug Fixes
+
+* test manuale sempre ([952fa24](https://github.com/massimo-salidu-acn/hellowrd-gitaction/commit/952fa243b2f4f31c976b795f1974005a4f6e0ced))
+
 ## [2.0.52](https://github.com/massimo-salidu-acn/hellowrd-gitaction/compare/v2.0.50...v2.0.52) (2023-10-16)
 
 
