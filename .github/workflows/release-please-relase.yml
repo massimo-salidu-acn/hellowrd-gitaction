@@ -1,0 +1,53 @@
+on:
+  workflow_dispatch:
+    inputs:
+      tag_version:
+        required: true
+        default: '2.0.0'
+        type: string
+        description: Deployment Environment
+
+permissions:
+  contents: write
+  pull-requests: write
+
+name: release-please-hotfix
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    outputs:
+      release_created: ${{ steps.release-please.outputs.release_created }}
+    steps:
+      - name: Set environment variables
+        run: |
+          echo "...Version to deploy: ${{ inputs.version || 'xxx'}}"
+          echo "...1 Git ref: ${{ github.head_ref }}"
+          echo "...2 Git ref: ${{ github.ref }}"
+          echo "...3 Git ref: ${GITHUB_REF##*/}"
+          echo "...3.1 Git ref: ${GITHUB_REF##*/}"
+          echo "...3.2 Git ref name: ${{ github.ref_name }}"
+          echo "...4 Short sha: ${GITHUB_SHA::7}"
+          echo "...5 Input Version or Git ref: ${{ inputs.version || github.ref }}"
+          echo "...6 Input Version or Git ref: ${{ inputs.version || github.ref_name }}"
+
+      - uses: google-github-actions/release-please-action@v3
+        id: release-please
+        with:
+          release-type: node
+          package-name: hellowrd-gitaction
+          default-branch: "${{ github.ref_name }}"
+          labels: "Hotfix-${{ github.ref }}"
+          release-as: ${{ inputs.tag_version }}"
+          tag-separator: hofix
+          monorepo-tags: false
+          changelog-types: >-
+            [
+              {"type":"feat","section":"Features","hidden":false},
+              {"type":"fix","section":"Bug Fixes","hidden":false},
+              {"type":"docs","section":"Other","hidden":false},
+              {"type":"refactor","section":"Other","hidden":false},
+              {"type":"ci","section":"Other","hidden":false},
+              {"type":"test","section":"Other","hidden":false},
+              {"type":"chore","section":"Other","hidden":true},
+              {"type":"build","section":"Other","hidden":true}
+            ]
