@@ -32,7 +32,6 @@ jobs:
           package-name: hellowrd-gitaction
           default-branch: "${{ github.ref_name }}"
           labels: "Hofix-${{ github.ref }}"
-          tag-separator: hofix
           monorepo-tags: false
           changelog-types: >-
             [

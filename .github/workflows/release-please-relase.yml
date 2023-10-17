@@ -37,8 +37,7 @@ jobs:
           package-name: hellowrd-gitaction
           default-branch: "${{ github.ref_name }}"
           labels: "Hotfix-${{ github.ref }}"
-          release-as: "${{ inputs.tag_version }}"
-          tag-separator: hofix
+          release-as: "${{ inputs.tag_version || ''}}" 
           monorepo-tags: false
           changelog-types: >-
             [
