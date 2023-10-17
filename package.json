@@ -1,6 +1,6 @@
 {
     "name": "hellowrd-gitaction",
-    "version": "2.61.0",
+    "version": "2.70.0",
     "author": "Massimo Salidu <massimo.salidu@gmail.com>",
     "scripts": {
         "prehello": "echo \"--Preparing greeting\"",
