@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.70.0](https://github.com/massimo-salidu-acn/hellowrd-gitaction/compare/v2.61.0...v2.70.0) (2023-10-17)
+
+
+### Bug Fixes
+
+* dopo force ([29150c5](https://github.com/massimo-salidu-acn/hellowrd-gitaction/commit/29150c50dffdafb461c7631c5f6900fafdf4e2a9))
+* nuovo fux ([8fc5e37](https://github.com/massimo-salidu-acn/hellowrd-gitaction/commit/8fc5e37fcabd46e0bd2db696c2b6945d7090637c))
+
 ## [2.61.0](https://github.com/massimo-salidu-acn/hellowrd-gitaction/compare/v2.60.0...v2.61.0) (2023-10-17)
 
 
