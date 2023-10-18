@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.75.0](https://github.com/massimo-salidu-acn/hellowrd-gitaction/compare/v2.70.0...v2.75.0) (2023-10-18)
+
+
+### Bug Fixes
+
+* test ([50a062a](https://github.com/massimo-salidu-acn/hellowrd-gitaction/commit/50a062a3ed6f9eb9064141d6b7930395474f6598))
+* test2 ([5d7d082](https://github.com/massimo-salidu-acn/hellowrd-gitaction/commit/5d7d0823e9d59c62b5dc79f8da78dd502f052241))
+
+
+### Other
+
+* release 2.75.0 ([ad0620c](https://github.com/massimo-salidu-acn/hellowrd-gitaction/commit/ad0620c44fc634f88facd6016f7048ff5a32b951))
+
 ## [2.70.0](https://github.com/massimo-salidu-acn/hellowrd-gitaction/compare/v2.61.0...v2.70.0) (2023-10-17)
 
 
