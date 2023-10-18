@@ -1,5 +1,48 @@
 # Changelog
 
+## [2.75.1](https://github.com/massimo-salidu-acn/hellowrd-gitaction/compare/v2.75.0...v2.75.1) (2023-10-18)
+
+
+### Bug Fixes
+
+* test dopo ([eb53e51](https://github.com/massimo-salidu-acn/hellowrd-gitaction/commit/eb53e51d00f79444d15297bc8dd8c6c8dbc20c98))
+
+## [2.75.0](https://github.com/massimo-salidu-acn/hellowrd-gitaction/compare/v2.70.0...v2.75.0) (2023-10-18)
+
+
+### Bug Fixes
+
+* test ([50a062a](https://github.com/massimo-salidu-acn/hellowrd-gitaction/commit/50a062a3ed6f9eb9064141d6b7930395474f6598))
+* test2 ([5d7d082](https://github.com/massimo-salidu-acn/hellowrd-gitaction/commit/5d7d0823e9d59c62b5dc79f8da78dd502f052241))
+
+
+### Other
+
+* release 2.75.0 ([ad0620c](https://github.com/massimo-salidu-acn/hellowrd-gitaction/commit/ad0620c44fc634f88facd6016f7048ff5a32b951))
+
+## [2.70.0](https://github.com/massimo-salidu-acn/hellowrd-gitaction/compare/v2.61.0...v2.70.0) (2023-10-17)
+
+
+### Bug Fixes
+
+* dopo force ([29150c5](https://github.com/massimo-salidu-acn/hellowrd-gitaction/commit/29150c50dffdafb461c7631c5f6900fafdf4e2a9))
+* nuovo fux ([8fc5e37](https://github.com/massimo-salidu-acn/hellowrd-gitaction/commit/8fc5e37fcabd46e0bd2db696c2b6945d7090637c))
+
+## [2.61.0](https://github.com/massimo-salidu-acn/hellowrd-gitaction/compare/v2.60.0...v2.61.0) (2023-10-17)
+
+
+### Bug Fixes
+
+* dopo action ([a2410fc](https://github.com/massimo-salidu-acn/hellowrd-gitaction/commit/a2410fccb8bc861c92cf9f463c5ff63f08440a66))
+* dopo action 2 ([f779286](https://github.com/massimo-salidu-acn/hellowrd-gitaction/commit/f7792862808e8a6afc74e785b8eee00c29768b22))
+* test manuale su main ([5b62f30](https://github.com/massimo-salidu-acn/hellowrd-gitaction/commit/5b62f3042443c225077539bd1ba9755873ecb970))
+
+
+### Other
+
+* release 2.60.5 ([bbc750b](https://github.com/massimo-salidu-acn/hellowrd-gitaction/commit/bbc750bba5dfccf9907f5d32eaf9926141e558f1))
+* release 2.61.0 ([9d9936a](https://github.com/massimo-salidu-acn/hellowrd-gitaction/commit/9d9936adb091dbadeef0eefc4374fccccc026ad5))
+
 ## [2.60.0](https://github.com/massimo-salidu-acn/hellowrd-gitaction/compare/v2.0.2...v2.60.0) (2023-10-17)
 
 
