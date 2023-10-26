@@ -39,6 +39,7 @@ on:
 env:
   IMAGE: 'europe-west4-docker.pkg.dev/mms-mwi-oms-integration-d-v001/doms-integration-dev/doms-masterdata-integration'
   mygit_ref: ${GITHUB_REF##*/}
+  fix_branch: '["release","main"]'
   
 jobs:
   deployment:
@@ -78,9 +79,9 @@ jobs:
           echo "test env Version to deploy:${{ env.VERSION }}"
 
       - name: Test var
-        if: contains('["main","lpoulter"]', github.ref_name)
+        if: contains(env.fix_branch , github.ref_name)
         run: |
-          echo "TEST IF branch name"
+          echo "TEST IF branch name OKKK"
       
 ##      - name: Create hotfix branch
 ##        uses: peterjgrainger/action-create-branch@v2.2.0
