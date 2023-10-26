@@ -39,7 +39,7 @@ on:
 env:
   IMAGE: 'europe-west4-docker.pkg.dev/mms-mwi-oms-integration-d-v001/doms-integration-dev/doms-masterdata-integration'
   mygit_ref: ${GITHUB_REF##*/}
-  fix_branch: '["release","Xma-in-X","pippo/"]'
+  fix_branch: '["release","main","pippo/"]'
   
 jobs:
   deployment:
@@ -79,7 +79,7 @@ jobs:
           echo "test env Version to deploy:${{ env.VERSION }}"
 
       - name: Test var
-        if: contains( env.fix_branch, github.ref_name)
+        if: startsWith( env.fix_branch, github.ref_name)
         run: |
           echo "TEST IF branch name OKKK"
       
