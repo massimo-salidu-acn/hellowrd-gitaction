@@ -79,7 +79,7 @@ jobs:
           echo "test env Version to deploy:${{ env.VERSION }}"
 
       - name: Test var
-        if: contains(env.fix_branch , github.ref_name)
+        if: contains( github.ref_name, env.fix_branch)
         run: |
           echo "TEST IF branch name OKKK"
       
