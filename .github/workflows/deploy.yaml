@@ -39,7 +39,7 @@ on:
 env:
   IMAGE: 'europe-west4-docker.pkg.dev/mms-mwi-oms-integration-d-v001/doms-integration-dev/doms-masterdata-integration'
   mygit_ref: ${GITHUB_REF##*/}
-  fix_branch: '["release","main"]'
+  fix_branch: '["release","Xmain","pippo/"]'
   
 jobs:
   deployment:
